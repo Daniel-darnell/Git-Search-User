@@ -1,0 +1,78 @@
+<hr>
+<div class="container-fluid page">
+    <div class="container">
+        <form class="form-inline form-group">
+            <input class="form-control mr-2" type="text" name="search" placeholder="All of github" id="search" [(ngModel)]="username">
+            <button id="search" class="btn btn-outline-primary btn-submit" (click)="findProfile()" type="submit">Search</button>
+        </form>
+    
+        <p id="error"></p>
+        <div class="card" *ngIf="profile">
+            <div class="card-header">
+                <button (click)=toggleRepo() id="repositories" class="btn btn-primary float-right">REPOSITORIES</button>
+                <a href="{{profile.html_url}}" target="_blank">
+                    <h3 appHover class="text-white username">{{profile.login}} </h3>
+                </a>
+                <span>{{profile.bio}}</span>
+                <li class="">
+                    <span class="">FOLLOWERS: {{profile.followers}}</span>
+                    <span class="">FOLLOWING: {{profile.following}}</span>
+                    <span class="">REPOSITORIES: {{profile.public_repos}}</span>
+                    <span class="">PROFILE STARS: {{profile.public_gists}}</span>
+                </li>
+            </div>
+            <div class="row" [hidden]="hideUser">
+                <div class="col-sm-6">
+                    <img class="" src="{{profile.avatar_url}}" alt="user-profile">
+                </div>
+                <div class="col-sm-6">
+                    <ul id="labels" class="">
+
+                        <li id="name" class=""><strong> {{profile.name}} </strong></li>
+                        <li class="" *ngIf="profile.hireable">Available for hire</li>
+                        <li class="" *ngIf="profile.company">
+                            &nbsp;{{profile.company}}
+                        </li>
+    
+                        <li class="" *ngIf="profile.email">
+                            &nbsp;{{profile.email}}
+                        </li>
+    
+                        <li class="" *ngIf="profile.blog">
+                            <a href="{{profile.blog}}" target="_blank" class="text-info">
+                                {{profile.blog}}
+                            </a>
+                        </li>
+                        <li class="" *ngIf="profile.location">Profile Location: {{profile.location}}</li>
+                        <li id="date" class="">Last Active: {{profile.updated_at | dateCount}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div [hidden]="showRepo">
+                <h2> <br> &nbsp; My repositories</h2>
+                <ul class="" *ngFor="let repo of work">
+                    <li class="">
+                        <strong>{{repo.name}}</strong>
+                        <div class="float-right">
+                            <span class="btn btn-sm btn-outline-light mr-2">
+                                 {{repo.watchers_count}}
+                            </span>
+                            <span class="btn btn-sm btn-outline-light mr-2">
+                                {{repo.forks_count}}
+                            </span>
+                            <span class="btn btn-sm btn-outline-light mr-2">
+                                 {{repo.stargazers_count}}
+                            </span>
+                            <span class="btn btn-sm btn-outline-light mr-2"><a href="{{repo.html_url}}" target="_blank">View 
+                                
+                            </a></span>
+                            
+                        </div>
+                        <p>{{repo.description}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
