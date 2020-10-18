@@ -1,6 +1,25 @@
-# GitSearchUser
+## GitSearchUser
 
+## AUTHOR
+Daniel Darnell Wanina
+
+## DESCRIPTION
+GitSearchUser is an angular generated application that allows users to search for there fellow or GitHub users to view their repositories and profile. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+
+## INSTALLATION(SET UP INSTRUCTION)
+To run the appliation; one has to clone the project from the repository https://github.com/Daniel-darnell/Git-Search-User.git; open the project via a code editor ie VSCode; run the project using the editor terminal using ng serve --open.
+
+## TECHNOLOGY USED
+* Angular CLI
+* Typescript
+* Javascript
+* HTML
+* CSS
+
+##  CONTACT INFORMATION
+For any query or correction pertaining Git-Search-User please feel free to reach me via the email dannydarnell1997@gmail.com.
+
 
 ## Development server
 
@@ -25,3 +44,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## LICENSE
+* Copyright 2020
+* MIT License
+
